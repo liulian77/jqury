@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/order.css">
+</head>
+
+<body>
+    <header></header>
+    <div class="content-box">
+        <form action="" method="post" id="cart-submit-detail-form">
+            <!-- 配送信息 -->
+            <div class="delivery-info">
+                <h3 class="delivery-info-title">配送信息</h3>
+                <div id="address-info-content" class="delivery-info-content">
+                    <div id="cart-address-button" class="cart-address-button not-empty"><i></i>添加新的地址</div>
+
+                    <div class="delivery-address empty hidden" id="delivery-address-detail">
+                        <div class="left-info" id="action-ship-info-block">
+                            <h3 class="left-info-h3"></h3>
+                            <span class="phone-number"></span>
+                            <span class="address"></span>
+                        </div>
+                        <div class="right-button">
+                            <a href="#" id="select-address-btn">切换地址</a>
+                            <a href="#" id="address-btn">+添加新地址</a>
+                        </div>
+                    </div>
+                    <div class="delivery-time">
+                        <span>配送时间</span>
+                        <input type="text" id="ship-date" autocomplete="off" placeholder="请选择配送日期" class="hasDatepicker">
+                        <select name="ship_time_scope" id="ship-time-scop"><option value="">时间</option></select>
+                        <p>配送时间受实时路况影响，会有前后15分钟的误差，请谅解。</p>
+                    </div>
+                    <div class="delivery-mode">
+                        <span>配送方式</span>
+                        <label><input type="radio" value="1" id="action-delivery-dispatch" checked="checked">&nbsp;21cake配送</label>
+                        <label><input type="radio" value="2" id="action-delivery-self-pick">&nbsp;站点自提<span id="self-pick-address"></span></label>
+                        <input type="hidden" name="distribution_id" id="distribution_id">
+                    </div>
+                </div>
+            </div>
+            <!-- 商品信息 -->
+            <div class="cart-goods-info">
+                <ul class="thead-ul">
+                    <li class="goods-ti">商品</li>
+                    <li class="birthday-card-ti">生日牌</li>
+                    <li class="unit-Price">单价</li>
+                    <li class="number-ti">数量</li>
+                    <li class="money-ti" colspan="2">金额</li>
+                </ul>
+                <div class="tbody-ul">
+                    <table class="cart-detail">
+                        <tbody class="cart-tbody">
+
+                            <tr class="item-order-promotion">
+                                <td colspan="6" class="order-sales"><span>[送优惠券]</span>21cake注册未下单用户，首单订购298元及以上蛋糕类商品，订单配送完成后，赠送新客权益40元优惠券1张。</td>
+                            </tr>
+                            <tr class="item-order-promotion">
+                                <td colspan="6" class="order-sales"><span>[送优惠券]</span>21cake注册未下单用户，首单订购298元及以上蛋糕类商品，订单配送完成后，赠送「新客权益牛乳冰淇淋/四口味挂耳咖啡兑换券」1张。</td>
+                            </tr>
+                            <tr class="item-order-promotion">
+                                <td colspan="6" class="order-sales"><span>[送赠品]</span>21cake注册未下单用户，首单购买298元（实付）及以上蛋糕类商品，随单赠送：小切块蛋糕1份（口味随机）。</td>
+                            </tr>
+                            <tr class="order-cart-gift">
+                                <td class="goods-img">
+                                    <a href="">
+                                        <img src="/images/order-xiao.jpg" alt="小切块蛋糕1份（口味随机）">
+                                    </a>
+                                </td>
+                                <td class="goods-cake" colspan="2">
+                                    <div>
+                                        <h4>小切块蛋糕1份（口味随机）</h4>
+                                        <span class="goods-spec">规格：<span>一份</span></span>
+                                        <span class="goods-gift">赠品</span>
+                                    </div>
+                                </td>
+                                <td class="cart-unit-Price">
+                                    <span>¥0.00</span>¥0.00 </td>
+                                <td class="number-li">
+                                    1 </td>
+                                <td class="money">¥0.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 订单留言 -->
+            <div class="leave-message">
+                <label>订单留言：</label><textarea name="memo" id="action-add-memo" maxlength="200" placeholder="请留下您对订单或商品的特殊要求，200字以内"></textarea>
+            </div>
+            <div class="select-info">
+                <div class="action-add-invoice">
+                    <label class="invoice" id="action-add-invoice">发票<input type="checkbox" id="input-invoice"></label>
+                    <div class="invoice-show" style="display: block">
+                        <div class="invoice-show-title">
+                            <a herf="#" class="electronic-invoice">电子发票</a>
+                            <a href="" class="what-invoice">什么是电子发票？</a>
+                        </div>
+                        <div id="companyPersonal">
+                            <label><input type="radio" class="company" checked="">公司发票</label>
+                            <label><input type="radio" class="personal">个人发票</label>
+                        </div>
+                        <div id="electronic-invoice">
+                            <input type="text" id="input-invoice-code" value="" placeholder="纳税人识别号或统一社会信用代码(必填)">
+                            <input type="text" id="input-invoice-title" value="" placeholder="发票抬头(必填)">
+                            <input type="text" id="input-invoice-mobile" value="" placeholder="收票人手机(必填)">
+                            <input type="text" id="input-invoice-email" value="" placeholder="收票人邮箱">
+                            <select id="input-invoice-content">
+                                        <option value="蛋糕">蛋糕</option>
+                                        <option value="冰淇淋">冰淇淋</option>
+                                        <option value="咖啡">咖啡</option>
+                             </select>
+                        </div>
+                    </div>
+                </div>
+                <ul class="select-coupons-title">
+                    <li class="active">使用优惠券</li>
+                    <li>添加优惠券/尊享卡</li>
+                </ul>
+                <div class="use-coupons"><span class="coupons-empty">暂无可用优惠券。<a href="/user-coupon_index.do" target="_blank">查看全部优惠券</a></span></div>
+            </div>
+            <!-- 支付信息 -->
+            <div class="payment-info">
+                <div class="left-pay">
+                    <h3>支付方式</h3>
+                    <ul class="pay-ways">
+                        <li>
+                            <a href="#" class="payment-item">在线支付</a>
+                        </li>
+                    </ul>
+                    <a href="#" class="fruit-coin"><i></i> 使用果实币（余额：0.00 元）</a>
+                    <label id="input-use-balance" style="display:none;">
+                         <input type="checkbox" value="1">抵扣¥
+                                <ins id="advance-to-use" data-advance="0">0.00</ins>
+                    </label>
+                    <a href="#" class="behalf-gold"><span></span>使用代金卡</a>
+                    <div class="behalf-gold-show" style="display: none;">
+                        <a href="#" id="add-gift-card-btn">添加代金卡</a>
+                        <span>＊不能与优惠券同时使用；抵扣金额不能开具发票</span>
+                    </div>
+                </div>
+                <div class="right-pay">
+                    <div class="pay-unmber">
+                        <ul>
+                            <li>商品金额<span class="total">¥ 298.00</span></li>
+                            <li>配送费<span>¥ 0.00</span></li>
+                            <li>优惠抵扣<span class="redco">- ¥ 0.00</span></li>
+                            <li>果实币抵扣<span class="redco">- ¥ 0.00</span></li>
+                            <li>代金卡抵扣<span class="redco">- ¥ 0.00</span></li>
+                        </ul>
+                    </div>
+                    <div class="total-amount">
+                        您总共需要支付<span id="total-amount" class="total">¥ 298.00</span>
+                    </div>
+                    <input type="submit" class="go-pay" value="下单结算">
+                    <div id="user-info-confirm">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer></footer>
+    <div class="add-new-address">
+        <div class="address-wrap">
+            <h1 class="add-adress-title">添加地址</h1>
+            <div>
+                <form action="/member-add_addr.json" method="post" id="add-address-from">
+                    <ul class="address-choose">
+                        <li class="address-choose-li">
+                            <label class="label-title"><span>*</span>所在地区：</label>
+                            <div class="select-city">
+                                <div class="city-choose">请选择</div>
+                                <img src="/images/xiabiao.png" alt="" class="select-cityimg">
+                            </div>
+                            <div class="city-list">
+                                <div class="city-select">
+                                    <div class="city-name">
+                                        <select name="city" id="new-input-city-select" placeholder="请选择" city-id="8">
+                                                <option value="1" class="option-city" selected="selected">上海</option>
+                                                <option value="2">北京</option>
+                                                <option value="3">天津</option>
+                                                <option value="4">杭州</option>
+                                                <option value="5">无锡</option>
+                                                <option value="6">苏州</option>
+                                                <option value="7">广州</option>
+                                                <option value="8">深圳</option>
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="city-list-show">
+                                    <div class="ciy-select">
+                                        <span class="country-name-list">宝安区</span>
+                                        <span class="country-name-list">福田区</span>
+                                        <span class="country-name-list">龙岗区</span>
+                                        <span class="country-name-list">龙华区</span>
+                                        <span class="country-name-list">罗湖区</span>
+                                        <span class="country-name-list">南山区</span>
+                                        <span class="country-name-list">盐田区</span>
+                                        <span class="country-name-list"></span></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="address-choose-li">
+                            <label class="label-title"><span>*</span>详细地址</label>
+                            <div class="adress-detail">
+                                <span class="areaName"></span>
+                                <input type="text" class="input1" placeholder="请填写街道，门牌号等" id="adressDetailEdit" autocomplete="off" name="house_number">
+                            </div>
+                        </li>
+                        <li class="address-choose-li">
+                            <div class="customer-msg">
+                                <div class="user-msg-left">
+                                    <label class="user-label-title"><span>*</span>收货人</label>
+                                    <div class="user-msg-left-input">
+                                        <input type="text" class="input2" placeholder="收货人姓名">
+                                    </div>
+                                </div>
+                                <div class="user-msg-right">
+                                    <label class="label-title"><span>*</span>手机号码</label>
+                                    <div class="user-msg-left-input">
+                                        <input type="text" name="mobile" class="input3" id="consignee-mobile" placeholder="收货人手机">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><span class="error-msg"></span></li>
+                        <li class="address-choose-li">
+                            <div class="bottom-btn">
+                                <div class="button-right">
+                                    <a href="javascript:;" id="address-cancel-btn">取消</a>
+                                    <a href="javascript:;" id="action-address-confirm-btn">确定</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 模板引擎，定义模板 -->
+    <script type="text/html" id="cart-template">
+        {{ each cart as prod }}
+        <tr id="goods_12_2569" data-id="{{prod.id}} ">
+            <td class="goods-img" style="border: 0px;">
+                <a href="/html/goods.html" target="_blank">
+                    <img src="{{prod.img}} ">
+                </a>
+            </td>
+            <td class="goods-cake" style="border: 0px;">
+                <div>
+                    <h4>
+                        <a href="/html/goods.html" target="_blank">{{prod.title}}</a>
+                    </h4>
+                    <span class="goods-spec">规格：<span>2.0磅</span></span>
+                    <span class="goods-laid"><i></i>赠送10套餐具</span>
+                </div>
+            </td>
+            <td class="cart-unit-Price" style="border: 0px;">{{prod.price.slice(0,7)}}</td>
+            <td class="number-li" style="border: 0px;">{{prod.amount}}</td>
+            <td class="money" style="border: 0px;">{{(prod.price.slice(1,6)* prod.amount).toFixed(2)}}</td>
+        </tr>
+        {{ /each }}
+    </script>
+    <script src="/libs/requirejs/require.js" data-main="/js/order"></script>
+</body>
+
+</html>

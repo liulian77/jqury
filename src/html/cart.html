@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/cart.css">
+    <script src="/libs/requirejs/require.js " data-main="/js/cart.js"></script>
+</head>
+
+<body>
+    <header></header>
+    <div class="content">
+        <div class="slide-sales">
+            <img src="/images/gonggao.png">
+            <span>卜壳面包，不添加的味道，马上品尝</span>
+            <a href="/html/list.html">点击查看&gt;&gt;</a>
+        </div>
+    </div>
+    <div class="cart-empty empty hidden">
+        <img src="/images/cartempty.png ">
+        <span>您的购物车里还没有商品</span>
+        <a href="/html/list.html ">去购物 &gt;&gt;</a>
+    </div>
+    <div class="cart not-empty ">
+        <div class="cart-goods ">
+            <ul>
+                <li>商品</li>
+                <li>生日牌</li>
+                <li>单价</li>
+                <li>数量</li>
+                <li>金额</li>
+            </ul>
+        </div>
+        <div class="cart-tbody ">
+            <table class="cart-table ">
+
+                <tr class="tableware ">
+                    <td colspan="7 ">
+                        <ul class="tableware-ul ">
+                            <li class="tableware-li "><img src="/images/tableware1.jpg ">
+                                <div class="right-title ">
+                                    <h5>北海道吐司（4片/京沪满39元包邮）</h5>
+                                    <span>¥13.80/一份</span>
+                                    <a href="# " class="add-to-cart " title="加入购物车 "><i></i></a>
+                                </div>
+                            </li>
+                            <li class="tableware-li "><img src="/images/tableware2.jpg ">
+                                <div class="right-title ">
+                                    <h5>阳光葡萄卷（京沪满39元包邮）</h5>
+                                    <span>¥13.80/一份</span>
+                                    <a href="# " class="add-to-cart " title="加入购物车 "><i></i></a>
+                                </div>
+                            </li>
+                            <li class="tableware-li "><img src="/images/tableware3.jpg ">
+                                <div class="right-title ">
+                                    <h5>蓝莓丹麦（京沪满39元包邮）</h5>
+                                    <span>¥13.80/一份</span>
+                                    <a href="# " class="add-to-cart " title="加入购物车 "><i></i></a>
+                                </div>
+                            </li>
+                            <li class="tableware-li "><img src="/images/tableware4.jpg ">
+                                <div class="right-title ">
+                                    <h5>核桃派（京沪满39元包邮）</h5>
+                                    <span>¥18.80/一份</span>
+                                    <a href="# " class="add-to-cart " title="加入购物车 "><i></i></a>
+                                </div>
+                            </li>
+                            <li class="tableware-li ">
+                                <img src="/images/tableware5.jpg ">
+                                <div class="right-title ">
+                                    <h5>方形蜡烛<span>配件</span></h5>
+                                    <span>￥8.00</span>
+                                    <a href="# " class="add-to-cart " title="加入购物车 "><i></i></a>
+                                </div>
+                            </li>
+                            <li class="tableware-li ">
+                                <img src="/images/tableware6.jpg ">
+                                <div class="right-title ">
+                                    <h5>餐具套餐<span>配件</span></h5>
+                                    <span>￥0.50</span>
+                                    <a href="# " class="add-to-cart " title="加入购物车 "><i></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="cart-submit ">
+            <span class="cart-submit-empty "><i></i>全部清空</span>
+            <ul class="total-detail ">
+                <li class="total">商品金额：¥ 298.00</li>
+                <!--<li>配送费：¥ 0.00</li>-->
+                <li>活动优惠：¥ 0.00</li>
+            </ul>
+            <div class="cart-total ">
+                <p>合计：¥<span class="total">298.00</span></p>
+            </div>
+            <div class="cart-submit-button "><a href="/html/order.html">去结算</a></div>
+        </div>
+    </div>
+    <div class="details-recommend ">
+        <h2>商品推荐</h2>
+        <ul class="recommend-list ">
+            <li>
+                <a href="# "><img src="/images/cart-tui1.jpg " alt="北海道吐司(4片) "></a>
+            </li>
+            <li>
+                <a href="# "><img src="/images/cart-tui2.jpg " alt="四口味挂耳咖啡混合装（4包入） "></a>
+            </li>
+            <li>
+                <a href="# "><img src="/images/cart-tui3.jpg " alt="Pound cake slice 磅蛋糕切片（核桃） "></a>
+            </li>
+            <li>
+                <a href="# "><img src="/images/cart-tui4.jpg " alt="拷贝蜡烛-爱尔兰咖啡 "></a>
+            </li>
+        </ul>
+    </div>
+    <footer></footer>
+    <!-- 模板引擎，定义模板 -->
+    <script type="text/html" id="cart-template">
+        {{ each cart as prod }}
+        <tr class="tbody-item " data-id="{{prod.id}} ">
+            <td class="goods-img ">
+                <a href="/html/goods.html"><img src="{{prod.img}} " alt=" "></a>
+            </td>
+            <td class="goods-cake ">
+                <div>
+                    <a href="/html/goods.html">{{prod.title}}</a>
+                    <span>规格：2.0磅</span>
+                    <p><i></i>赠送 10 套餐具</p>
+                </div>
+            </td>
+            <td class="select-birthday ">
+                <p class="birthday-option ">选择生日牌<i></i></p>
+                <ul class="birthday-hide ">
+                    <li class=" birthday-act ">生日快乐</li>
+                    <li class="birthday-act ">节日快乐</li>
+                    <li class="birthday-act ">Happy Birthday</li>
+                    <li class="birthday-act-self ">自定义</li>
+                    <li class="birthday-act-input " style="display:none; ">
+                        <input class="birthday-act-text " type="text " placeholder="可输入8个汉字或16个字符 ">
+                        <input type="button " value="确定 " class="action-birth-card-btn ">
+                    </li>
+                </ul>
+            </td>
+            <td class="goods-price ">
+                {{prod.price.slice(0,7)}}
+            </td>
+            <td class="goods-number ">
+                <p>
+                    <span class="minus">-</span>
+                    <input type="text " class="number-change amount" data-max="99 " value="{{prod.amount}} ">
+                    <span class="plus">+</span>
+                </p>
+            </td>
+            <td class="all-price sub">
+                {{(prod.price.slice(1,6)* prod.amount).toFixed(2)}}
+            </td>
+            <td class="del">
+                <a href="javascript:void(0);" class="delete"><i></i></a>
+            </td>
+        </tr>
+        {{ /each }}
+    </script>
+</body>
+
+</html>

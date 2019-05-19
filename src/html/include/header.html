@@ -1,0 +1,86 @@
+<div class="header">
+    <div class="header-wrap">
+        <a class="logo" href="#"><img src="/images/logo.png" alt=""></a>
+        <ul class="nav-box">
+            <li><a href="/index.html">首页</a></li>
+            <li><a href="/html/list.html">蛋糕</a></li>
+            <li><a href="/html/list.html">面包</a></li>
+            <li><a href="/html/list.html">冰淇淋</a></li>
+            <li><a href="/html/list.html">咖啡下午茶</a></li>
+            <li><a href="/html/list.html">咖啡全国送</a></li>
+            <li><a href="/html/list.html">企业专区</a></li>
+        </ul>
+        <div class="header-right">
+            <ul class="head">
+                <li class="appdown"><a href="">APP下载</a>
+                    <dl class="erweima">
+                        <dt><img src="/images/footer-erweima.png" alt=""></dt>
+                        <dd>下载更多优惠</dd>
+                    </dl>
+                </li>
+                <li class="head-city">
+                    <a href="" class="city-select">深圳<i></i></a>
+                    <div class="city-option">
+                        <p class="cityli"><a href="">上海</a></p>
+                        <p class="cityli"><a href="">北京</a></p>
+                        <p class="cityli"><a href="">天津</a></p>
+                        <p class="cityli"><a href="">杭州</a></p>
+                        <p class="cityli"><a href="">苏州</a></p>
+                        <p class="cityli"><a href="">广州</a></p>
+                        <p class="cityli"><a href="">深圳</a></p>
+                    </div>
+                </li>
+                <li class="messege"><a href="">消息</a>
+                    <div class="head-messege">
+                        <p class="messegep"><a href="">通知</a></p>
+                        <p class="messegep"><a href="">物流</a></p>
+                    </div>
+                </li>
+                <li class="login-register no-useremp"><a href="/html/login.html">登录</a>/<a href="/html/register.html">注册</a></li>
+                <li class="user-img-info useremp hidden">
+                    <a href=""><img src="/images/user-img.png" alt=""></a>
+                    <div class="header-user" style="display:none;">
+                        <p class="header-user-list"><a href="/html/order.html" target="_blank">我的订单</a></p>
+                        <p class="header-user-list"><a href="#">我的优惠券</a></p>
+                        <p class="header-user-list"><a href="#">我的纪念日</a></p>
+                        <p class="header-user-list login-back"><a href="javascript:void(0)">退出登录</a></p>
+                    </div>
+                </li>
+                <li class="cart-addumber">
+                    <a href="/html/cart.html"><span></span><i class="addumber">0</i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(".appdown").mouseenter(function() {
+        $(".erweima").stop().slideDown(200)
+    }).mouseleave(function() {
+        $(".erweima").stop().slideUp()
+    })
+    $(".city-select").mouseenter(function() {
+        $(".city-option").stop().slideDown(200)
+    }).mouseleave(function() {
+        $(".city-option").stop().slideUp()
+    })
+    $(".city-option").mouseenter(function() {
+        $(".city-option").stop().show()
+    }).mouseleave(function() {
+        $(".city-option").stop().slideUp()
+    })
+    $(".cityli").click(function(event) {
+        event.preventDefault()
+        $(".city-select").text($(event.target).text())
+    })
+    $(".messege").mouseenter(function() {
+        $(".head-messege").stop().slideDown(200)
+    }).mouseleave(function() {
+        $(".head-messege").stop().slideUp()
+    })
+    $(".user-img-info").mouseenter(function() {
+        $(".header-user").stop().slideDown(200)
+    }).mouseleave(function() {
+        $(".header-user").stop().slideUp()
+    })
+</script>

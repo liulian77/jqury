@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+    <header></header>
+    <div class="content">
+        <div class="login-box">
+            <p>用户注册</p>
+            <form action="">
+                <ul class="form-content">
+                    <li><input type="text" name="username" id="username" placeholder="输入手机号码" autofocus maxlength="11"></li>
+                    <li><input type="password" name="password" id="password" autocomplete="off" maxlength="20" placeholder="密码：请输入8~20字符，需同时包含英文和数字"><i></i></li>
+                    <li> <input type="password" class="password2" autocomplete="off" maxlength="20" placeholder="确认密码"></li>
+                    <li><input type="text" placeholder="请输入图片字符" id="code">
+                        <img src="" alt="" id="gen-code" class="regiGetCode-img"><span class="refresh-button"></span>
+                    </li>
+                    <li>
+                        <input type="text" class="authCode" placeholder="短信验证码" tabindex="5">
+                        <span id="regiGetCode" class="regiGetCode">获取验证码</span>
+                    </li>
+                    <li><input id="birthday" type="text" name="birthday" placeholder="请选择生日(选填)" data-required="1" /></li>
+                    <!-- 输入短信验证码结束 -->
+                    <li class="err-text"><span id="err-info"></span></li>
+                    <li><input type="submit" class="login-button" id="regBtn" value="注册"></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+    <div class="bk-box">
+        <p>注册成功,跳转中.....</p>
+    </div>
+    <footer></footer>
+    <script src="/libs/requirejs/require.js" data-main="/js/register"></script>
+</body>
+
+</html>
